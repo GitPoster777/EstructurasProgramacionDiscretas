@@ -1,27 +1,32 @@
 /**
  * BinaryTree
+ * 
  */
-public class BinaryTree<T> {
+public class BinaryTree<T> extends Comparable<T> {
+  // Propiedad de orden -> facilita la busqueda O(log n)
   Node<T> root;
 
   public BinaryTree(){
     this.root = null;
   }
+  // patron facade --> fachada
+
   // Method to insert a new node with given key
-  public void insert(T data){
-    root = insertRec(root, key);
+  public boolean insertNode(T data){
+    return insertRec(root, data);
   }
-  private Node inserRec(Node root, int key){
+  private boolean inserRec(Node<T> root, T data){ // patron facade --> fachada
      // if three is empty, return a new node 
      if(root == null){
-       return new Node<E>(key);
+       return new Node<T>(data);
+
      }
-     if(key<root.getValue()){
-        root.left = insertRec(root.getLeft(), key);
+     if(data.{
+        root.setLeft(left = insertRec(root.getLeft(), key);
      }
 
-     else if(key > root.getValue()){
-       root.right = inserRec(root.getRight(), key);
+     else if(key > root.getRight()){
+       root. = inserRec(root.getRight(), key);
      }
      return root;
   }

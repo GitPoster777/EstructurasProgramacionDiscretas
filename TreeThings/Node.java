@@ -1,8 +1,8 @@
-public class Node<E> {
+public class Node<T> extends Comparable<T> {
   Node left, right;
-  E value;
+  T value;
   
-  public Node(E item){
+  public Node(T item){
     this.left = this.right = null;
     this.value = item; 
   }
@@ -13,8 +13,15 @@ public class Node<E> {
     return this.right;
   }
 
-  public E getValue(){
+  public T getValue(){
     return this.value;
   }
 
+  public void setLeft(Node<T> left){
+    this.left = left;
+  }
+
+  public void setRight(Node<T> right){
+    this.right = right;
+  }
 }
