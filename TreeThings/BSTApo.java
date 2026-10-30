@@ -41,4 +41,39 @@ public class BSTApo<T> extends Comparable<T> {
     return false;
 }
 // Implementar recorridos de arbol 
+
+//Implementar preOrder con fachada
+public void inOrder(){
+  inOrderRec(root);
+}
+private void inOrderRec(Node<T> node){
+  if(node != null){
+    inOrderRec(node.getLeft());
+    System.out.println(node.getValue());
+    inOrderRec(node.getRight())
+  }
+}
+//implementar inOrder
+public void preOrder(){
+  preOrderRec(root);
+}
+private void preOrderRec(Node<T> node){
+  if(node != null){
+    System.out.println(node.getValue());
+    preOrderRec(node.getLeft());
+    preOrderRec(node.getRight())
+  }
+}
+//implementar postOrder
+public void postOrder(){
+  postOrderRec(root);
+}
+private void postOrderRec(Node<T> node){
+  if(node != null){
+    postOrderRec(node.getLeft());
+    postOrderRec(node.getRight()) 
+    System.out.println(node.getValue());
+    
+  }
+}
 }
